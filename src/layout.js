@@ -1,12 +1,10 @@
 import React from 'react'
-import Formulario from './formulario'
-import Lista from './lista'
+import ContactListSimple from './contact_list_simple'
 
 function Layout() {
   return (
     <>
-    < Formulario />
-    < Lista />
+    <ContactListSimple />
     </>
   )
 }
