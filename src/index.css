@@ -18,3 +18,7 @@ p {
 .contact-font-size {
   font-size: 14px;
 }
+
+.button-home {
+  width: 20vw;
+}
