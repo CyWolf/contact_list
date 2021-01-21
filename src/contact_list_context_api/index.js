@@ -1,9 +1,14 @@
 import React from 'react'
+import Formulario from './formulario'
+import Lista from './lista'
+
+
 
 function ContactListContextApi() {
     return (
-        <div>
-            Soy Contact list con context api
+        <div className='container'>
+            < Formulario />
+            < Lista />
         </div>
     )
 }
