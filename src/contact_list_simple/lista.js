@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function List(props) {
-    const {contacts} = props
+    const {contacts, editContacts, deleteContacts} = props
     return (
         <div className='div-size mx-auto mt-5'>
                 <h1 className='text-center mb-5'>Contact list</h1>
@@ -37,8 +37,8 @@ function List(props) {
                             </div>
 
                             <div className='d-flex'>
-                                <a href='#'><i className="fas fa-edit mr-4" /></a>
-                                <a href='#'><i className="fas fa-trash" /></a>
+                                <a href='#' onClick={() => { editContacts(item) }}><i className="fas fa-edit mr-4" /></a>
+                                <a href='#' onClick={() => { deleteContacts(item) }}><i className="fas fa-trash" /></a>
                             </div>
                         </div>
                     )

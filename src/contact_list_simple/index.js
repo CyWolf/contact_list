@@ -9,24 +9,49 @@ function ContactListSimple() {
     const [phone, setPhone] = useState()
     const [address, setAddress] = useState()
     const [contacts, setContacts] = useState([])
+    const [isEdit, setIsEdit] = useState(false)
+    const [currentContacts, setCurrentContacts] = useState({})
     //----------------------------------------------------------------------------------------
     const handleSubmit = (e) => {
         (e).preventDefault()
-        const id = new Date().getTime()
-        const newContacts = {
-            id: id,
-            fullname: fullName,
-            phone: phone,
-            email: email,
-            address: address,
+        if (isEdit) {
+            const editInfo = contacts.map((item) => {
+                if (item.id === currentContacts.id) {
+                    const newContacts = {
+                        id: currentContacts.id,
+                        fullname: fullName,
+                        email: email,
+                        phone: phone,
+                        address: address,
+                    }
+                    return newContacts
+                } else {
+                    return item
+                }
+            })
+            setContacts(editInfo)
+            setFullName('')
+            setEmail('')
+            setPhone('')
+            setAddress('')
+            setIsEdit(false)
+            setCurrentContacts({})
+        } else {
+            const id = new Date().getTime()
+            const newContacts = {
+                id: id,
+                fullname: fullName,
+                phone: phone,
+                email: email,
+                address: address,
+            }
+            const contactsConcat = contacts.concat(newContacts)
+            setContacts(contactsConcat)
+            setFullName('')
+            setEmail('')
+            setPhone('')
+            setAddress('')
         }
-        const contactsConcat = contacts.concat(newContacts)
-        setContacts(contactsConcat)
-        setFullName('')
-        setEmail('')
-        setPhone('')
-        setAddress('')
-
     }
     //----------------------------------------------------------------------------------------
     const handleFullName = (e) => {
@@ -44,6 +69,23 @@ function ContactListSimple() {
     const handleAddress = (e) => {
         setAddress(e.target.value)
     }
+    //----------------------------------------------------------------------------------------
+    const editContacts = (item) => {
+        setFullName(item.fullName)
+        setEmail(item.email)
+        setPhone(item.phone)
+        setAddress(item.address)
+        setIsEdit(true)
+        setCurrentContacts(item)
+    }
+    //----------------------------------------------------------------------------------------
+    const deleteContacts = (item) => {
+        const erase = contacts.filter((trash) => {
+            return trash.id !== item.id
+        })
+        setContacts(erase)
+    }
+    //----------------------------------------------------------------------------------------
 
     return (
         <>
@@ -59,8 +101,10 @@ function ContactListSimple() {
                 address={address}
             />
 
-            < List 
-            contacts = {contacts}
+            < List
+                contacts={contacts}
+                editContacts={editContacts}
+                deleteContacts={deleteContacts}
             />
         </>
     )
