@@ -38,8 +38,8 @@ function Lista() {
                             </div>
 
                             <div className='d-flex'>
-                                <a href='#'><i className="fas fa-edit mr-4" /></a>
-                                <a href='#'><i className="fas fa-trash" /></a>
+                                <a href='#' onClick={() => { actions.editContacts(item) }}><i className="fas fa-edit mr-4" /></a>
+                                <a href='#' onClick={() => { actions.deleteContacts(item) }}><i className="fas fa-trash" /></a>
                             </div>
                         </div>
                     )
