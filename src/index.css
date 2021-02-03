@@ -1,12 +1,26 @@
+body { 
+  background: url(./assets/images/wallpaperflare.com_wallpaper.jpg) no-repeat center center fixed #000; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 p {
   line-height: 10px;
 }
-
 .form-size {
   width: 35vw;
 }
 .div-size {
   width: 45vw;
+}
+.div-users {
+  width: 20vw;
+  height: 50wh;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  padding: 5px 5px;
+  background-color: white;
 }
 .div-contact {
   border: 1px solid rgb(209, 209, 209);
@@ -18,7 +32,12 @@ p {
 .contact-font-size {
   font-size: 14px;
 }
-
 .button-home {
   width: 20vw;
+}
+.button-add-ut {
+  width: 100%;
+}
+.gb-white {
+  background-color: white;
 }

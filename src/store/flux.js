@@ -12,8 +12,8 @@ const getState = ({ getStore, setStore, getActions }) => {
 
         actions: {
             handleSubmit: (e) => {
-                const store = getStore()
                 e.preventDefault()
+                const store = getStore()
                 if (store.isEdit) {
                     const store = getStore()
                     const editInfo = store.contacts.map((item) => {
@@ -60,19 +60,22 @@ const getState = ({ getStore, setStore, getActions }) => {
                 }
             },
 
-
             handleFullName: (e) => {
                 setStore({ fullName: e.target.value })
             },
+
             handleEmail: (e) => {
                 setStore({ email: e.target.value })
             },
+
             handlePhone: (e) => {
                 setStore({ phone: e.target.value })
             },
+
             handleAddress: (e) => {
                 setStore({ address: e.target.value })
             },
+
             editContacts: (item) => {
                 setStore({
                     fullName: item.fullName,
@@ -83,6 +86,7 @@ const getState = ({ getStore, setStore, getActions }) => {
                     currentContacts: item,
                 })
             },
+
             deleteContacts: (item) => {
                 const store = getStore()
                 const erase = store.contacts.filter((trash) => {

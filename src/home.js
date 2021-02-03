@@ -16,8 +16,12 @@ function Home() {
                     <button type="button" className="btn btn-dark mb-3 d-block mx-auto button-home">Contact list context api</button>
                 </Link>
 
-                <Link to='/ContactListUSeHistory'>
+                <Link to='/ContactListUSeHistory/Lista'>
                     <button type="button" className="btn btn-dark mb-3 d-block mx-auto button-home">Contact list useHistory</button>
+                </Link>
+
+                <Link to='/ContactListFetch/Login'>
+                    <button type="button" className="btn btn-dark mb-3 d-block mx-auto button-home">Contact list fetch</button>
                 </Link>
 
             </div>

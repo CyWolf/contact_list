@@ -6,6 +6,7 @@ import Home from './home'
 import ContactListSimple from './contact_list_simple'
 import ContactListContextApi from './contact_list_context_api'
 import ContactListUSeHistory from './contact_list_useHistory'
+import ContactListFetch from './contact_list_fetch'
 
 
 function Layout() {
@@ -24,8 +25,12 @@ function Layout() {
         <ContactListContextApi />
       </Route>
 
-      <Route exact path='/ContactListUSeHistory'>
+      <Route path='/ContactListUSeHistory'>
         <ContactListUSeHistory />
+      </Route>
+
+      <Route path='/ContactListFetch'>
+        <ContactListFetch />
       </Route>
 
     </Switch>
