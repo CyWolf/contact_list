@@ -15,7 +15,7 @@ function List(props) {
 
                 {contacts.map((item) => {
                     return (
-                        <div className='d-flex justify-content-around mt-2 mb-2 div-contact px-2 py-2 gb-white'>
+                        <div className='d-flex justify-content-around mt-2 mb-2 div-contact px-2 py-2 bg-white'>
                             <div>
                                 <i className="fas fa-user icon-profile-size mt-2" />
                             </div>
